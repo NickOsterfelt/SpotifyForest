@@ -7,7 +7,9 @@ const Track = require("../models/tracks");
 
 const SpotifyAPI = require("../models/SpotifyAPI")
 
-/** GET / => {users: [user, ...]} */
+/**   GET all tracks
+ * GET / => {tracks: [track, ...]} 
+*/
 router.get("/", authRequired, async function (req, res, next) {
   try {
     const tracks = await Track.findAll();
@@ -16,7 +18,9 @@ router.get("/", authRequired, async function (req, res, next) {
     return next(err);
   }
 });
-
+/**   GET track by id
+ * GET / => {tracks: [track, ...]} 
+*/
 router.get("/:id", authRequired, async function (req, res, next) {
   try {
     const track = await SpotifyAPI.getTrackDetails(req.access_token);
@@ -42,7 +46,9 @@ router.get("/:id", authRequired, async function (req, res, next) {
     return next(err);
   }
 });
-//get user's tracks
+/** GET user's top tracks 
+ * GET /tracks/user/:id => {tracks: [track, track, ....]}
+ */
 router.get("/user/:id", async function (req, res, next) {
   try {
       const tracks = UserTracks.getByUser(req.params.id);

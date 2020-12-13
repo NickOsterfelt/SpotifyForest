@@ -7,7 +7,9 @@ const Artist = require("../models/artists");
 const UserArtist = require("../models/user_artists");
 const SpotifyAPI = require("../models/SpotifyAPI");
 
-/** GET / => {users: [user, ...]} */
+
+/**     Get all artists 
+ * GET / => {artist: [user, ...]} */
 router.get("/", authRequired, async function (req, res, next) {
     try {
         const artists = await Artist.findAll();
@@ -17,6 +19,8 @@ router.get("/", authRequired, async function (req, res, next) {
     }
 });
 
+/**     Get Artist data from artist id
+ *  GET /id {artist: {id: **, ..}} */
 router.get("/:id", authRequired, async function (req, res, next) {
     try {
         const artist = await SpotifyAPI.getArtistDetails(req.access_token);
@@ -41,7 +45,9 @@ router.get("/:id", authRequired, async function (req, res, next) {
         return next(err);
     }
 });
-//get user's tracks
+
+/** Get User's top artists.
+ * GET /user/:id => {artists : [artist1, ...]} */
 router.get("/user/:id", async function (req, res, next) {
     try {
         const artists = UserArtist.getByUser(req.params.id);

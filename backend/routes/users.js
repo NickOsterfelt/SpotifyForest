@@ -1,5 +1,4 @@
 /** Routes for users. */
-
 const express = require("express");
 const router = express.Router();
 
@@ -22,6 +21,9 @@ router.get("/", authRequired, async function (req, res, next) {
   }
 });
 
+/**   Refresh User's access-token
+ * POST {refresh_token} => {newToken: <access_token>}
+ */
 router.post("/refresh-token", authRequired, async function (req, res, next) {
   try {
     let newToken = await SpotifyAPI.refreshUserToken(req.refresh_token);
@@ -33,8 +35,10 @@ router.post("/refresh-token", authRequired, async function (req, res, next) {
   }
 });
 
-
-
+/**
+ *    Get groups that a user with :id is in.
+ * GET /:id/groups => {groups: [group1, group2, ....]}
+ */
 router.get("/:id/groups", authRequired, async function (req, res, next) {
   try {
     const groups = await UserGroup.getByUser(req.params.id)
@@ -45,6 +49,10 @@ router.get("/:id/groups", authRequired, async function (req, res, next) {
   }
 });
 
+/**
+ *    Get Current user data
+ * GET /curr-user {headers:{access_token}} => SpotifyApi => {user: {id, ....}}
+ */
 router.get("/curr-user", authRequired, async function (req, res, next) {
   try {
     let user = await SpotifyAPI.getCurrUser(req.access_token);
@@ -77,7 +85,8 @@ router.get("/curr-user", authRequired, async function (req, res, next) {
   }
 });
 
-/** GET /[username] => {user: user} */
+/**   Get user by id 
+ * GET /:id => {user: user} */
 
 router.get("/:id", authRequired, async function (req, res, next) {
   try {
@@ -87,16 +96,22 @@ router.get("/:id", authRequired, async function (req, res, next) {
     return next(err);
   }
 });
-
-router.delete("/:username", authRequired, async function (req, res, next) {
+/**
+ *    Delete user
+ * DELETE /id => {msg : "User deleted"}
+ */
+router.delete("/:id", authRequired, async function (req, res, next) {
   try {
-    await User.remove(req.params.username);
+    await User.remove(req.params.id);
     return res.json({ message: "User deleted" });
   } catch (err) {
     return next(err);
   }
 });
 
+/**   Get tracks by user id
+ * GET /track/:id => {tracks: [track1, track2, ...]}
+ */
 router.get("/tracks/:id", authRequired, async function (req, res, next) {
   try {
     const userId = req.params.id;
@@ -108,6 +123,9 @@ router.get("/tracks/:id", authRequired, async function (req, res, next) {
   }
 });
 
+/**   Get tracks by user id
+ * GET /track/:id => {tracks: [track1, track2, ...]}
+ */
 router.get("/artists/:id", authRequired, async function (req, res, next) {
   try {
     const userId = req.params.id;
@@ -119,6 +137,10 @@ router.get("/artists/:id", authRequired, async function (req, res, next) {
   }
 });
 
+/**
+ *    Get current-user tracks
+ * GET /curr-user/tracks => Spotify API => {tracks: [track1, ...]}
+ */
 router.get("/curr-user/tracks/:id", authRequired, async function (req, res, next) {
   try {
     const userId = req.params.id;
@@ -156,6 +178,10 @@ router.get("/curr-user/tracks/:id", authRequired, async function (req, res, next
   }
 });
 
+/**
+ *    Get current-user artists
+ * GET /curr-user/artists => Spotify API => {artists: [artist1, ...]}
+ */
 router.get("/curr-user/artists/:id", authRequired, async function (req, res, next) {
   try {
     const userId = req.params.id;

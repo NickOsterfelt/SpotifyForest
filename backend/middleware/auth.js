@@ -31,16 +31,6 @@ function authRequired(req, res, next) {
 }
 
 
-/** Middleware to use when they must provide a valid token that is an admin token.
- *
- * Add username onto req as a convenience for view functions.
- *
- * If not, raises Unauthorized.
- *
- */
-
-
-
 /** Middleware to use when they must provide a valid token & be user matching
  *  username provided as route param.
  *

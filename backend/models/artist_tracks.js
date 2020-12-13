@@ -1,5 +1,8 @@
 const db = require("../db");
 
+/**
+ * NOT IMPLEMENTED INTO DB and ROUTES yet. (still unsure if there is a need due to spotify API having the data easily retrievable)
+ *  */ 
 class ArtistTrack {
     static async getByArtist(artistId) {
         const result = await db.query(

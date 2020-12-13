@@ -5,14 +5,8 @@ const router = express.Router();
 
 const Group = require("../models/groups");
 const UserGroup = require("../models/user_groups");
-/** 
- * group ROUTES:
- *      -create new group
- *      -get all groups (that are not full)
- *      -get a specific group by id
- *      -search groups by group name
- *      -get groups with matching artists
-*/
+/**     Create a new group based on groupData
+ * Post {groupData} => {msg: "group created!"}*/
 router.post("/new", authRequired, async function (req, res, next) {
     try {
         const data = req.body.data.data;
@@ -24,7 +18,9 @@ router.post("/new", authRequired, async function (req, res, next) {
         return next(err);
     }
 });
-
+/**      Get all groups
+ *  GET / => {groups : [group1, ...]}
+ */ 
 router.get("/", authRequired, async function (req, res, next) {
     try {
         const groups = await Group.findAll();
@@ -33,7 +29,9 @@ router.get("/", authRequired, async function (req, res, next) {
         return next(err);
     }
 });
-
+/**      Get group by groupId
+ *  GET /groupId => {group: {groupId: id, ...}}
+ */ 
 router.get("/:groupId", authRequired, async function (req, res, next) {
     try {
         const group = await Group.findOne(req.params.groupId)
@@ -44,7 +42,9 @@ router.get("/:groupId", authRequired, async function (req, res, next) {
         return next(err);
     }
 });
-
+/**     Search groups by group name
+ *  POST ({search: "test"}) => {groups: [{test1}, {test2}]}
+ */
 router.post("/search", authRequired, async function (req, res, next) {
     try {
         const groups = await Group.search(req.body.search);
@@ -54,6 +54,7 @@ router.post("/search", authRequired, async function (req, res, next) {
         return next(err);
     }
 });
+
 /** 
  * user_group ROUTES:
  *      -user joining groups
@@ -62,7 +63,9 @@ router.post("/search", authRequired, async function (req, res, next) {
  *      -get groups with matching artists
 */
 
-
+/** Join group with groupId 
+ * POST /join/:groupId (userId) => {msg: "user added..."}
+*/
 router.post("/join/:groupId", authRequired, async function (req, res, next) {
     try {
         const result = UserGroup.addUser(req.body.userId, req.params.groupId);
@@ -72,7 +75,9 @@ router.post("/join/:groupId", authRequired, async function (req, res, next) {
         return next(err);
     }
 });
-
+/** Join group with groupId 
+ * POST /leave/:groupId (userId) => {msg: "user removed..."}
+*/
 router.post("/leave/:groupId", authRequired, async function (req, res, next) {
     try {
         const result = UserGroup.removeUser(req.body.userId, req.params.groupId);
@@ -87,7 +92,9 @@ router.post("/leave/:groupId", authRequired, async function (req, res, next) {
         return next(err);
     }
 });
-
+/**     Search groups with matching user tracks
+ *  POST /search/tracks {[trackA, trackB, trackC]} => [{group1, [trackA, trackB]}, {group2, [trackB]}, {group3, [trackD]}]
+ */
 router.post("/search/tracks", authRequired, async function (req, res, next) {
     try {
         const groups = await UserGroup.match_groups_tracks(req.body.tracks)
@@ -96,7 +103,9 @@ router.post("/search/tracks", authRequired, async function (req, res, next) {
         return next(err);
     }
 });
-
+/**     Search groups with matching user artists
+ *  POST /search/artists {[artistA, artistB, artistC]} => [{group1, [artistsA, artistB]}, {group2, [artistB]}, {group3, [artistD]}]
+ */
 router.post("/search/artists", authRequired, async function (req, res, next) {
     try {
         const groups = await UserGroup.match_groups_tracks(req.body.artists)

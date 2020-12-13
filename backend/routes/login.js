@@ -7,8 +7,8 @@ const stateKey = 'spotify_auth_state';
 const createToken = require("../helpers/createToken")
 const { SPOTIFY_CLIENT_ID, SPOTIFY_SECRET} = require("../config.js");
 
-const SpotifyAPI = require("../models/SpotifyAPI");
-const redirect_uri = 'http://localhost:3001/login/callback'; // Your redirect uri
+ // Frontend URL to redirect to after successful login
+const redirect_uri = 'http://localhost:3001/login/callback';
 
 let generateRandomString = function(length) {
     let text = '';

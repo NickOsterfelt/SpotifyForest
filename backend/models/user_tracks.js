@@ -1,5 +1,6 @@
 const db = require("../db");
 
+/** UserArtists is the many to many model for users and their associated top-artists */
 class UserTrack {
     static async getByTrack(trackId) {
         const result = await db.query(

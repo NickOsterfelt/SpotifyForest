@@ -1,4 +1,4 @@
-/** Start server for jobly. */
+/** Start server for Spotify Forest. */
 
 
 const app = require('./app');

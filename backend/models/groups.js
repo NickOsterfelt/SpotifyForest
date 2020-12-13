@@ -1,5 +1,6 @@
 const db = require("../db");
 
+/** Related functions for Groups. */
 class Group {
 
     static async add(data) {

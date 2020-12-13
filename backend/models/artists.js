@@ -33,6 +33,7 @@ class Artist {
 
     return result.rows;
   }
+  /* Artist exists? */
   static async exists(id) {
     const artistRes = await db.query(
       `SELECT id 

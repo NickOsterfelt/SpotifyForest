@@ -1,7 +1,9 @@
 const db = require("../db");
 const Group = require("./groups");
-class UserGroup {
 
+/** UserGroup is the many-to-many ORM Model used to pair users with the groups that they are "in" */
+class UserGroup {
+    /** Get groups that userId is in */
     static async getByUser(userId) {
         const result = await db.query(
             `SELECT user_id, group_id
@@ -11,6 +13,7 @@ class UserGroup {
 
         return result.rows;
     }
+    /** get users in group with groupId */
     static async getUsers(groupId) {
         const result = await db.query(
             `SELECT users.id, users.username, users.photo_url, users.access_token, users.refresh_token
@@ -21,7 +24,7 @@ class UserGroup {
             `);
         return result.rows;
     }
-
+    /** Add userId to group with groupId */
     static async addUser(userId, groupId) {
         Group.increment_group_size(groupId);
         const result = await db.query(
@@ -33,7 +36,7 @@ class UserGroup {
         );
         return result.rows[0];
     }
-
+    //** Remove user with userId from group with groupId */
     static async removeUser(userId, groupId) {
         const size = Group.decrement_group_size(groupId);
         if (size === 0) {
@@ -50,7 +53,9 @@ class UserGroup {
             return result.rows[0];
         }
     }
-
+    /** Join groups on users in the groups and their top tracks, make a enumerable list of tracks that each group shares
+     * Afterwards the groups are ranked based on how many tracks in each group matches the tracks in user_tracks
+     */
     static async match_groups_tracks(user_tracks) {
         const res = await db.query(
             `SELECT 
@@ -101,7 +106,9 @@ class UserGroup {
         console.log(groups);
         return groups;
     }
-
+    /** Join groups on users in the groups and their top artists, make a enumerable list of artists that each group shares
+     * Afterwards the groups are ranked based on how many artists in each group matches the artists in user_artists
+     */
     static async match_groups_artists(user_artists) {
         const res = await db.query(
             `SELECT 
