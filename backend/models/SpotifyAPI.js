@@ -5,6 +5,11 @@ const SPOTIFY_BASE_URL = "https://api.spotify.com/v1";
 const { SPOTIFY_CLIENT_ID, SPOTIFY_SECRET, NUM_TOP_TRACKS, NUM_TOP_ARTISTS } = require("../config");
 const createToken = require("../helpers/createToken");
 
+/**
+ * The SpotifyAPI class is the only method used to communicate with spotify other than logging in.
+ * Almost all requests use the apiRequest function to produce a similar looking request to 
+ * communicate with the API, other than refreshing tokens.
+ */
 class SpotifyAPI {
     
     //Reusable api request helper function

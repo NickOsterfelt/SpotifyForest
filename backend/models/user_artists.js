@@ -2,6 +2,7 @@ const db = require("../db");
 
 /** UserArtists is the many to many model for users and their associated top-artists */
 class UserArtist {
+    /** Get userIDs with the same artistIDs  */ 
     static async getByArtist(artistId) {
         const result = await db.query(
             `SELECT user_id, artist_id,
@@ -11,7 +12,7 @@ class UserArtist {
 
         return result.rows;
     }
-
+    /** Get artistIds with the same userID */
     static async getByUser(userId) {
         const result = await db.query(
             `SELECT 
@@ -31,7 +32,7 @@ class UserArtist {
 
         return result.rows;
     }
-
+    /** add a user_id, artist_id pair */
     static async add(userId, artistId) {
         const result = await db.query(
             `INSERT INTO user_artists 
@@ -43,7 +44,7 @@ class UserArtist {
 
         return result.rows[0];
     }
-
+    /** entry exists? */
     static async exists(userId, artistId) {
         const result = await db.query(
             `SELECT 

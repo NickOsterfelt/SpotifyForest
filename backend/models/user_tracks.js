@@ -11,7 +11,7 @@ class UserTrack {
 
         return result.rows;
     }
-
+    /** Get trackIds which have a matching userId */
     static async getByUser(userId) {
         const result = await db.query(
             `SELECT 
@@ -33,7 +33,7 @@ class UserTrack {
 
         return result.rows;
     }
-
+    /** Add a userId, trackId pair to the table */
     static async add(userId, trackId) {
         const result = await db.query(
             `INSERT INTO user_tracks 
@@ -45,7 +45,7 @@ class UserTrack {
 
         return result.rows[0];
     }
-
+    /** pair exists? */
     static async exists(userId, trackId) {
         const result = await db.query(
             `SELECT 

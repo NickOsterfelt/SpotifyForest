@@ -2,7 +2,7 @@ const db = require("../db");
 
 /** Related functions for Groups. */
 class Group {
-
+    /** Add a new group */
     static async add(data) {
         const res = await db.query(
             `INSERT INTO groups 
@@ -16,7 +16,7 @@ class Group {
 
         return res.rows[0];
     }
-
+    //** find all groups */
     static async findAll() {
         const res = await db.query(
             `SELECT group_name, num_users, is_full, info
@@ -27,7 +27,7 @@ class Group {
 
         return res.rows;
     }
-
+    //** Find group with id: id */
     static async findOne(id) {
         const res = await db.query(
             `SELECT id, group_name, num_users, is_full, info
@@ -51,7 +51,7 @@ class Group {
             groupInfo : group.info
         };
     }
-
+    /** Group exists? */
     static async exists(id) {
         const res = await db.query(
             `SELECT id 
@@ -64,7 +64,7 @@ class Group {
         }
         return true;
     }
-
+    /** Search groups based on group_name */
     static async search(group_name) {
         const res = await db.query(
             `SELECT id, group_name, num_users, is_full, info
@@ -82,7 +82,7 @@ class Group {
             groupInfo : group.info
         }));
     }
-
+    /** Increase number of users in group */
     static async increment_group_size(id) {
         try {
             const res = await db.query(
@@ -104,7 +104,7 @@ class Group {
         }
 
     }
-
+    /** decrease number of users in group */
     static async decrement_group_size(id) {
         try {
             let res = await db.query(
@@ -129,7 +129,7 @@ class Group {
             else throw e;
         }
     }
-
+    /** update any detail of a group */
     static async update(id, data) {
         let { query, values } = partialUpdate(
             "groups",
@@ -149,7 +149,7 @@ class Group {
 
         return result.rows[0];
     }
-
+    /** delete the group */
     static async remove(id) {
         const res = await db.query(
             `DELETE FROM groups,
