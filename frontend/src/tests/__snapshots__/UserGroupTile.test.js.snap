@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="user-tile"
+        >
+          <div
+            class="item"
+          >
+            <div
+              class="header"
+            >
+              <h5
+                href="/users/undefined"
+              >
+                <u />
+              </h5>
+            </div>
+            <div
+              class="image-container"
+            >
+              <img
+                alt=""
+                src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"
+              />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

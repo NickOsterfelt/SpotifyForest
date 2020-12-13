@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container-fluid"
+  >
+    <div
+      class="row justify-content-center "
+    >
+      <div
+        class="col-sm-4 col-md-3 col-lg-2 px-2 profile-sidebar"
+      >
+        <h4
+          class="text-light mt-3"
+        >
+          Your profile:
+        </h4>
+        <div>
+          Loading user details...
+        </div>
+      </div>
+      <div
+        class="col-sm-4 col-md-6 col-lg-8 middle-section"
+      >
+        <div>
+          <div>
+            Loading Group data....
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-sm-4 col-md-3 col-lg-2 px-2 profile-sidebar"
+      >
+        <div>
+          <div
+            class="text-light"
+          >
+            Click on a user's tile to see more info!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

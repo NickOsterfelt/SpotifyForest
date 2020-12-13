@@ -1,0 +1,69 @@
+td {
+    border: 2px solid black;
+    position: relative;
+    text-align: center;
+    width: calc(500px / 3);
+    height: calc(500px / 3);
+    padding: 4px;
+    background-clip: padding-box;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.item {
+    /* background-color: white; */
+    /* border: 2px solid black; */
+    position: relative;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    /* perspective: -1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -webkit-transform: rotate(-45deg) rotateX(-61deg) translateY(-21px) translate(44px, -1px) translateZ(83px);
+    -moz-transform: rotate(-45deg) rotateX(-61deg) translateY(-21px) translate(44px, -1px) translateZ(83px);;
+    -ms-transform:  rotate(-45deg) rotateX(-61deg) translateY(-21px) translate(44px, -1px) translateZ(83px);
+    transform: rotate(-45deg) rotateX(-61deg) translateY(-21px) translate(44px, -1px) translateZ(83px); */
+}
+
+.placeholder-tile {
+    background-color: rgb(226, 226, 226);
+    /* border: 2px solid black; */
+}
+
+.header h5 {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    
+    margin-top: -15px;
+}
+
+.image-container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.image-container img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: max;
+}
+
+.user-tile {
+    background-color: #b9f9c366;
+}
+
+.user-tile:hover {
+    background-color: #0000 !important;
+}
+
+.user-tile.selected {
+    background-color: #0000 !important;
+    border: #007cffe0 3px solid;
+    border-collapse: inherit;
+}

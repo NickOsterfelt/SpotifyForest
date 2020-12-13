@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot with no Groups and user 1`] = `
+<DocumentFragment>
+  <div
+    class="container mt-2 "
+  >
+    <div
+      class="row d-flex justify-content-center"
+    >
+      <div
+        class="col-8 bg-secondary rounded text-light p-3 px-5 mt-3 text-left"
+      >
+        <div
+          class=""
+        >
+          <h4>
+            Looks like you are not in any groups yet!
+          </h4>
+          <h5>
+            Click the "Find Groups" button to find groups that have similar music tastes.
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

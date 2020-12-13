@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container mt-5"
+  >
+    <div
+      class="row d-flex justify-content-center"
+    >
+      <div
+        class="col-6 bg-dark text-left text-light rounded p-5"
+      >
+        <form
+          class=""
+        >
+          <div
+            class="form-group"
+          >
+            <label
+              class="form-label"
+              for="groupName"
+            >
+              Group Name
+            </label>
+            <input
+              class="form-control"
+              id="groupName"
+              name="name"
+              placeholder="Enter a name for the group"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <label
+              class="form-label"
+              for="groupInfo"
+            >
+              Description
+            </label>
+            <input
+              class="form-control"
+              id="groupInfo"
+              name="info"
+              placeholder="What should people know about the group?"
+              type="text"
+              value=""
+            />
+          </div>
+          <button
+            class="btn btn-success"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

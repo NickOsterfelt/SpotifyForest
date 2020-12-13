@@ -1,0 +1,13 @@
+.group-control {
+    padding: 0px;
+}
+
+.group-control h4 {
+    font-size: 1rem;
+    display: inline;
+}
+
+.group-control button {
+    display: inline;
+    
+}

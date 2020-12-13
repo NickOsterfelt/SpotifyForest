@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class=""
+  >
+    <div
+      class="form-group row"
+    >
+      <div
+        class="col-sm-10"
+      >
+        <div
+          class="form-check"
+        >
+          <input
+            class="form-check-input"
+            id="searchType1"
+            name="searchType"
+            type="radio"
+            value="track"
+          />
+          <label
+            class="form-check-label"
+            for="searchType1"
+            title=""
+          >
+            Search groups with matching top tracks
+          </label>
+        </div>
+        <div
+          class="form-check"
+        >
+          <input
+            class="form-check-input"
+            id="searchType2"
+            name="searchType"
+            type="radio"
+            value="artist"
+          />
+          <label
+            class="form-check-label"
+            for="searchType2"
+            title=""
+          >
+            Search groups with matching top artists
+          </label>
+        </div>
+        <div
+          class="form-check"
+        >
+          <input
+            class="form-check-input"
+            id="searchType3"
+            name="searchType"
+            type="radio"
+            value="name"
+          />
+          <label
+            class="form-check-label"
+            for="searchType3"
+            title=""
+          >
+            Search by group name
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="form-group row"
+    >
+      <div
+        class="col-sm-10"
+      >
+        <button
+          class="btn btn-success"
+          type="submit"
+        >
+          Search Groups
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

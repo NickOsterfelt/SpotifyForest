@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="group-control pt-3"
+    >
+      <h4 />
+    </div>
+    <div
+      class="main pt-2"
+    >
+      <table>
+        <tbody>
+          <tr>
+            <td
+              class="placeholder-tile"
+            >
+              <div
+                class="item"
+              />
+            </td>
+            <td
+              class="placeholder-tile"
+            >
+              <div
+                class="item"
+              />
+            </td>
+            <td
+              class="placeholder-tile"
+            >
+              <div
+                class="item"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="placeholder-tile"
+            >
+              <div
+                class="item"
+              />
+            </td>
+            <td
+              class="user-tile curr-user"
+            >
+              <div
+                class="item"
+              >
+                <div
+                  class="header"
+                >
+                  <h5
+                    href="/users/1"
+                  >
+                    <u>
+                      You
+                    </u>
+                  </h5>
+                </div>
+                <div
+                  class="image-container"
+                >
+                  <img
+                    alt=""
+                    src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"
+                  />
+                </div>
+              </div>
+            </td>
+            <td
+              class="placeholder-tile"
+            >
+              <div
+                class="item"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="placeholder-tile"
+            >
+              <div
+                class="item"
+              />
+            </td>
+            <td
+              class="placeholder-tile"
+            >
+              <div
+                class="item"
+              />
+            </td>
+            <td
+              class="placeholder-tile"
+            >
+              <div
+                class="item"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;

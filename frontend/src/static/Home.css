@@ -1,0 +1,86 @@
+html, body, .container-fluid {
+    height: 100%;
+    
+}
+
+.container-fluid {
+    display: table;
+    width: 100%;
+    margin-top: -50px;
+    padding: 50px 0 0 0;
+    /*set left/right padding according to needs*/
+    box-sizing: border-box;
+    margin-top: -114px;
+    padding-top: 114px;
+}
+
+.container-fluid>.row {
+    min-height: 92vh;
+}
+
+.profile-sidebar {
+    background: black;
+    padding-top: 10px;
+    height: 92vh !important;
+    padding: 0px !important;
+}
+
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile-image img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: max;
+}
+
+.middle-section {
+    height: 92vh !important;
+}
+
+nav.nav.nav-tabs {
+    min-height: 40px !important;
+    max-height: 40px !important;
+}
+
+.nav-tabs a {
+    padding: 8px 0px 0px 0px;
+    width: 72px;
+    font-size: 12px;
+    
+}
+.user-details {
+    padding: 0px;
+}
+.user-details nav {
+    margin-top: 10px;
+    background: none;
+}
+
+.user-details a.active {
+    color: white;
+    font-weight: bolder;
+    border-bottom: 5px dotted;
+    box-sizing: border-box;
+}
+
+.user-details nav a.active:hover {
+    color: black !important;
+}
+
+.user-details nav a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.tab-pane {
+    margin-top: 5px;
+    text-align: left;
+}
