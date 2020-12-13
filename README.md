@@ -4,7 +4,7 @@ SpotifyForest is the second Capstone Project made for my Springboard Software En
 
 This project was created for my Springboard Software Developement Career Track course, serving as my second and final Capstone Project.
 
-The goal of Spotify Forest is to create a social network where users can easily join groups to view other user's top listened to tracks and artists. Today, using apps such as Spotify and Apple Music has made it so easy to find new music that the community aspect of sharing songs between one another has been greatly lost. Hopefully through Spotify Forest, this hugely important part of music will be restored.
+The goal of Spotify Forest is to create a social network where users can easily join groups to view other user's top listened to tracks and artists. Today, using apps such as Spotify and Apple Music has made it so easy to find new music that the community aspect of sharing songs between one another has been greatly lost. Hopefully through Spotify Forest, a contribution to soliving this problem will be made.
 
 ## The Frontend
 #### Major Requirements
