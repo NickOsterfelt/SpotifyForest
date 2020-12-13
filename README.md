@@ -19,12 +19,13 @@ The goal of Spotify Forest is to create a social network where users can easily 
 
 #### To run the frontend:
  - Create or ensure that you have a Spotify Account.
- - Install dependancies
- 	- `npm i` (should take a long time)
- - Compile the project and start the frontend server
- 	- `npm start`
- - if you have not done so, setup and start the backend server
- 	- (instructions found below)
+ - In the frontend folder:
+  - Install dependancies
+  	- `npm i` (should take a long time)
+  - Compile the project and start the frontend server
+ 	 - `npm start`
+  - if you have not done so, setup and start the backend server
+ 	 - (instructions found below)
 
 ### User flow:
 1. User logs in through spotify portal.
@@ -42,7 +43,7 @@ The goal of Spotify Forest is to create a social network where users can easily 
 - (complete list is in package.json)
 
 #### To run the app:
- - Clone the project into a folder that will include a folder for the frontend and a folder for the backend
+ - In the backend folder: 
  - Install dependancies
  	  - `npm i` (this will take a long time)
  - Get spotify application credentials
