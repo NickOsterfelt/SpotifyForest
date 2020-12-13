@@ -42,7 +42,7 @@ The goal of Spotify Forest is to create a social network where users can easily 
 - Spotify Developer account and Application keys
 - (complete list is in package.json)
 
-#### To run the app:
+#### To run the backend:
  - In the backend folder: 
  - Install dependancies
  	  - `npm i` (this will take a long time)
