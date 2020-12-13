@@ -5,6 +5,7 @@ import { Navbar, Nav, NavItem } from "reactstrap";
 
 /**
  * The bootstrap NavBar to provide accessibility to routes
+ * only visible when user is logged in (handled in /routes/Home)
  */
 function NavBar() {
     const navItems = (
